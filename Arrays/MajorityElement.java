@@ -1,0 +1,27 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+      int n = nums.length ;
+        Arrays.sort(nums);
+          int ans =  nums[0] ;
+          int fre = 1 ;
+          int pre = 0 ;
+
+       for(int i = 1 ; i < n ; i++ ){
+
+            if(nums[i] == nums[i-1] ){
+                fre++;
+            }
+            else {
+                fre = 1;
+                ans = nums[i];
+            }
+
+            if(fre > n/2){
+                return ans ;
+            }
+       }
+
+    
+        return ans ;
+    }
+}
